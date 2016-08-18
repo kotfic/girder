@@ -1,5 +1,6 @@
 ---
 - hosts: girder
+  connection: local
   roles:
     - role: girder
       girder_path: "{{ lookup('ENV', 'TRAVIS_BUILD_DIR') }}"
