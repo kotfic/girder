@@ -4,8 +4,8 @@ python:
     - 3.4
 
 env:
-    - GIRDER_TEST_GROUP=python
-    - GIRDER_TEST_GROUP=browser
+#    - GIRDER_TEST_GROUP=python
+#    - GIRDER_TEST_GROUP=browser
     - GIRDER_TEST_GROUP=ansible
 
 matrix:
