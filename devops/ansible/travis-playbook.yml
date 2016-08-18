@@ -2,4 +2,5 @@
 - host: girder
   roles:
     - role: girder
-      girder_version: master
+      girder_path: "{{ lookup('ENV', 'TRAVIS_BUILD_DIR') }}"
+      girder_version: "{{ lookup('ENV', 'BRANCH') }}"
