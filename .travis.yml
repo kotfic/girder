@@ -38,7 +38,7 @@ install:
 script:
     - if [ ${GIRDER_TEST_GROUP} == 'browser' ]; then source ./devops/scripts/travis/default_script.sh; fi
     - if [ ${GIRDER_TEST_GROUP} == 'python' ]; then source ./devops/scripts/travis/default_script.sh; fi
-    - if [ ${GIRDER_TEST_GROUP} == 'ansible' ]; then source ./devops/scripts/travis/ansible_script.sh; f
+    - if [ ${GIRDER_TEST_GROUP} == 'ansible' ]; then source ./devops/scripts/travis/ansible_script.sh; fi
 
 deploy:
     provider: heroku
