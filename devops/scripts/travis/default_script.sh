@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 mkdir _build
 cd _build
 cmake -DPYTHON_COVERAGE:BOOL=${PY_COVG} -DPYTHON_VERSION:STRING=${TRAVIS_PYTHON_VERSION} ..

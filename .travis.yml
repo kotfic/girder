@@ -26,16 +26,19 @@ compiler:
 before_install:
     # Show the memory state; this lets us more quickly determine when the
     # travis environment is bad
+    - set -e
     - if [ ${GIRDER_TEST_GROUP} == 'browser' ]; then source ./devops/scripts/travis/default_before_install.sh; fi
     - if [ ${GIRDER_TEST_GROUP} == 'python' ]; then source ./devops/scripts/travis/default_before_install.sh; fi
     - if [ ${GIRDER_TEST_GROUP} == 'ansible' ]; then source ./devops/scripts/travis/ansible_before_install.sh; fi
 
 install:
+    - set -e
     - if [ ${GIRDER_TEST_GROUP} == 'browser' ]; then source ./devops/scripts/travis/default_install.sh; fi
     - if [ ${GIRDER_TEST_GROUP} == 'python' ]; then source ./devops/scripts/travis/default_install.sh; fi
     - if [ ${GIRDER_TEST_GROUP} == 'ansible' ]; then source ./devops/scripts/travis/ansible_install.sh; fi
 
 script:
+    - set -e
     - if [ ${GIRDER_TEST_GROUP} == 'browser' ]; then source ./devops/scripts/travis/default_script.sh; fi
     - if [ ${GIRDER_TEST_GROUP} == 'python' ]; then source ./devops/scripts/travis/default_script.sh; fi
     - if [ ${GIRDER_TEST_GROUP} == 'ansible' ]; then source ./devops/scripts/travis/ansible_script.sh; fi
