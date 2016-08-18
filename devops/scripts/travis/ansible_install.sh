@@ -9,7 +9,7 @@ localhost
 EOF
 
 # Check syntax
-ansible-playbook -i /tmp/inventory tests/travis-playbook.yml --syntax-check
+ansible-playbook -i /tmp/inventory ./devops/ansible/travis-playbook.yml --syntax-check
 
 # Set up configuration
 cat <<EOF > ~/.ansible.cfg
