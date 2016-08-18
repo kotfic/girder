@@ -6,7 +6,7 @@ python:
 env:
     - GIRDER_TEST_GROUP=python
     - GIRDER_TEST_GROUP=browser
-    - GIRDER_TEST_GORUP=ansible
+    - GIRDER_TEST_GROUP=ansible
 
 matrix:
     exclude:
