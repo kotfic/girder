@@ -11,7 +11,12 @@ export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRAN
 echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
 echo "TRAVIS_BUILD_DIR=$TRAVIS_BUILD_DIR"
 
-sudo ansible-galaxy install nodesource.node
-sudo ansible-galaxy install Stouts.mongodb
+cat <<EOF > ~/.ansible.cfg
+[defaults]
+roles_path = /tmp/roles:/etc/ansible/roles
+EOF
+
+ansible-galaxy install nodesource.node -p /tmp/roles
+ansible-galaxy install Stouts.mongodb -p /tmp/roles
 
 ansible-playbook -i /tmp/inventory ./devops/ansible/travis-playbook.yml -vv
