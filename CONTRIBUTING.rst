@@ -80,12 +80,25 @@ invalid, resulting in the confusing error message::
 
 but you won't be confused now, will you?
 
+Tracking Public Symbols
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Public symbol addition and removal is tracked in Girder through the ``scripts/publicNames.txt`` file
+and any PR that adds new public symbols must add those symbols to this file. This is done by running
+the following script::
+
+    python scripts/publicNames.py > scripts/publicNames.txt
+
+Any changes to the file should be committed as apart of the PR or not all CI tests will pass.
+
+
 How to integrate a PR
 ^^^^^^^^^^^^^^^^^^^^^
 
 Getting your contributions integrated is relatively straightforward, here is the checklist:
 
 - All tests pass
+- Public symbols list is updated in ``scripts/publicNames.txt``
 - Any significant changes are added to the ``CHANGELOG.rst`` with human-readable and understandable
   text (i.e. not a commit message). Text should be placed in the "Unreleased" section, and grouped
   into the appropriate sub-section of:
